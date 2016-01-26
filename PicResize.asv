@@ -35,9 +35,8 @@ for k = 1 : ImgNum
                     BlankPic(i,j,3) = Img(i-diff,j,3);
                 end
             end
-        end  
-        imwrite(BlankPic,destinationName{k},'jpg');
-    else
-        imwrite(Img,destinationName{k},'jpg');
+        end
     end
+
+    imwrite(BlankPic,destinationName{k},'jpg');
 end
