@@ -2,10 +2,14 @@ function PicResize(BlankPicPath,SrcImgPath,destination)
 
 BlankPicPath = strcat(BlankPicPath,'blank.jpg');
 ImgPath = dir([SrcImgPath,'*','.jpg']);
+
+%统计待处理图片的张数
 ImgNum = 0;
 for i = 1 : length(ImgPath)
     ImgNum = ImgNum + 1;
 end
+
+%待处理图片的储存路径ImgPathName以及处理后图片的储存路径destinationName
 ImgPathName = cell(ImgNum,1);
 destinationName = cell(ImgNum,1);
 for i = 1 : ImgNum
@@ -13,6 +17,7 @@ for i = 1 : ImgNum
     destinationName{i} = strcat(destination,ImgPath(i).name);
 end
 
+%调整图片尺寸
 for k = 1 : ImgNum
     BlankPic = imread(BlankPicPath);
     BlankPic_width = size(BlankPic,2);
